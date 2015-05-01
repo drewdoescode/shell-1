@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source colors.sh
+echo -ne "${c_yellow} What is your name, IM NOT A STALKER... WHAT! "
+echo -ne "${c_green}
+>"
+echo -ne "${c_magenta}"
+read name
+echo -e "${c_red} Hello ${name}"

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source colors.sh
+
+echo -ne  "${c_violet} Hello APPLEPIE"
+echo -e "${c_red} world"
+
+
+
+
+
