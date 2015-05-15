@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source colors.sh
+. colors.sh
 echo -ne "${c_yellow} What is your name, IM NOT A STALKER... WHAT! "
 echo -ne "${c_green}
 >"

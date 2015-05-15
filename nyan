@@ -1,0 +1,6 @@
+#!/bin/sh
+
+. colors.sh
+while true; do
+echo  "`random_color` APPLEPIE"
+done

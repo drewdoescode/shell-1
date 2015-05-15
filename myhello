@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-source colors.sh
+. colors.sh
 
-echo -ne  "${c_violet} Hello APPLEPIE"
+echo -ne  "${c_violet} Hello"
+echo -ne "${c_yellow} APPLEPIE"
 echo -e "${c_red} world"
 
 

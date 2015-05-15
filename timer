@@ -1,0 +1,56 @@
+#!/bin/sh
+
+hundredths=0
+seconds=0
+minutes=0
+hours=0
+days=0
+weeks=0
+while true; do
+    
+  clear
+  echo ${SOL_red}weeks:${SOL_reset}
+  echo $weeks
+  echo ${SOL_orange}days:${SOL_reset}
+  echo $days
+  echo ${SOL_yellow}hours:${SOL_reset}
+  echo $hours
+  echo ${SOL_green}minutes:${SOL_reset}
+  echo $minutes
+  echo ${SOL_cyan}seconds:${SOL_reset}
+  echo $seconds
+  echo ${SOL_violet}hundredths:${SOL_reset}
+  echo $hundredths
+  sleep 0.01
+  hundredths=`expr $hundredths + 1`
+  if [ $hundredths -eq 100 ]; then
+  
+    seconds=`expr $seconds + 1`
+    hundredths=0
+  
+  fi
+
+  if [ $seconds -eq 60 ]; then
+
+    minutes=`expr $minutes + 1`
+    seconds=0
+  fi
+  if [ $minutes -eq 60 ]; then
+
+    hours=`expr $hours + 1`
+    minutes=0
+  fi
+  if [ $hours -eq 24 ]; then
+
+    days=`expr $days + 1`
+    hours=0
+  fi
+  if [ $days -eq 7 ]; then
+
+    weeks=`expr $weeks + 1`
+    days=0
+  fi
+
+done
+
+
