@@ -1,0 +1,31 @@
+#!/bin/sh
+
+#badgers=11
+#mushrooms=2
+#snake=4
+
+
+
+echo $SOL_clear
+for verse in  1 2 3 4 5; do
+  for badger in `seq 1 12`; do
+  
+  
+    echo "Badger!"
+    sleep 0.5
+
+  done
+  
+  if [ $verse -lt 5]; then
+
+    for mushroom in `seq 1 2`; do
+    
+
+      echo "mushroom!"
+      sleep 0.75
+  done
+  else 
+    echo "SNAKE"
+fi
+done  
+
