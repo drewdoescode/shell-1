@@ -1,0 +1,24 @@
+#!/bin/sh
+
+
+echo ${SOL_clear}
+echo ${SOL_yellow}"Welcome to your multiplication helping table!"
+echo ${SOL_reset}
+
+
+if [ -n "$1" ]; then
+
+  num=$1
+else
+  echo -n ${SOL_violet}"You must enter a number to begin! "
+  echo -n ${SOL_reset}">"
+  echo -n ${SOL_green} ""
+  read num
+fi
+
+  
+for m in `seq 1 12`; do
+answer=`expr $m \* $num`
+echo ${SOL_orange} $m x $num = $answer
+  
+done
