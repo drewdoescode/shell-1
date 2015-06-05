@@ -1,0 +1,30 @@
+#!/bin/sh
+
+echo ${SOL_clear}
+
+echo ${SOL_yellow}"Who would cross the Bridge of Death
+Must answer me these questions three
+'Ere the other side he see"
+
+
+
+echo ${SOL_red}"What is your name?"
+echo -n "${SOL_reset}> ${SOL_green}"
+
+read name
+name=`echo $name | tr '[:upper:]' '[:lower:]'`
+
+
+
+echo ${SOL_red}What is your quest?
+echo -n "${SOL_reset}> ${SOL_green}"
+read quest
+
+if [ "$name" = lancelot -o "$name" = galahad ]; then
+ 
+
+echo ${SOL_red}"What is your favorite color?"
+echo -n "${SOL_reset}> ${SOL_green}"
+read color
+fi
+echo ${SOL_reset}
