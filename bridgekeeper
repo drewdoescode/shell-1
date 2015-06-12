@@ -5,26 +5,52 @@ echo ${SOL_clear}
 echo ${SOL_yellow}"Who would cross the Bridge of Death
 Must answer me these questions three
 'Ere the other side he see"
+die()
+{
+  echo "${SOL_red}You DIED"
+}
+live()
+{
+  echo "${SOL_yellow}You May See The Other Side!"
+}
+ask()
+{
+  question="$1"
+  echo $question
+  printf '> '
+  read answer
+  name=`echo $name | tr '[:upper:]' '[:lower:]'`
+}
+
+ask  ${SOL_red}"What is your name?"
+${SOL_green}
+name=$answer
+echo "$name"
 
 
 
-echo ${SOL_red}"What is your name?"
-echo -n "${SOL_reset}> ${SOL_green}"
-
-read name
-name=`echo $name | tr '[:upper:]' '[:lower:]'`
 
 
-
-echo ${SOL_red}What is your quest?
-echo -n "${SOL_reset}> ${SOL_green}"
-read quest
+ask ${SOL_red}"What is your quest?"
+${SOL_green}
+quest=$answer
+echo $quest
 
 if [ "$name" = lancelot -o "$name" = galahad ]; then
  
 
-echo ${SOL_red}"What is your favorite color?"
-echo -n "${SOL_reset}> ${SOL_green}"
-read color
+ask ${SOL_red}"What is your favorite color?"
+
+colour=$answer
+echo $colour
 fi
 echo ${SOL_reset}
+
+if [ "$name" = king_arthur ]; then
+echo ${SOL_green}"What is the airspeed velocity of an unlegged 
+swallow?"
+echo ${SOL_gree}
+answer=$answer
+echo "WHAT"
+fi
+
