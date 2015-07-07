@@ -1,0 +1,65 @@
+#!/bin/sh
+
+. utils.sh
+
+clear
+echo ${SOL_green}"Welome to the Quiz game :)"
+
+q1() {
+  ask "What is 9 X 10?" $SOL_yellow
+  if [ "$answer" = "90" ]; then
+    return 0 
+  fi
+  return 1
+}
+
+q2() {
+  ask "What is the capitol of the U.S" $SOL_yellow
+  if [ "$answer" = "washington d.c." ]; then
+    return 0
+  fi
+  return 1
+}
+
+q3() {
+  ask "What is the name of the dead developer of apple?" $SOL_yellow
+  if [ "$answer" = "steve jobs" ];then
+    return
+  fi
+  return 1
+}
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+questions="q1\nq2\nq3"
+
+while [ -n "$questions" ]; do
+  q=`echo "$questions" |sort -R | head -1`
+  eval "$q"
+  if [ $? -eq 0 ]; then
+    questions=`echo "$questions" | awk "!/$q/"`
+  fi
+done
+
+
+
+
+
+
+
+
+

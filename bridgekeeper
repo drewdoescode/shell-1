@@ -7,50 +7,55 @@ Must answer me these questions three
 'Ere the other side he see"
 die()
 {
-  echo "${SOL_red}You DIED"
+  echo "${SOL_red}"You DIED"
 }
+
 live()
 {
-  echo "${SOL_yellow}You May See The Other Side!"
+  echo "${SOL_yellow}"You May See The Other Side!"
 }
+
 ask()
 {
   question="$1"
-  echo $question
+  color="$2"
+  echo $color$question$SOL_reset
   printf '> '
   read answer
-  name=`echo $name | tr '[:upper:]' '[:lower:]'`
+  answer=`echo $answer | tr '[:upper:]' '[:lower:]'`
 }
 
 ask  ${SOL_red}"What is your name?"
-${SOL_green}
+echo ${SOL_green}
 name=$answer
-echo "$name"
-
-
-
-
 
 ask ${SOL_red}"What is your quest?"
-${SOL_green}
+echo ${SOL_green}
 quest=$answer
-echo $quest
 
-if [ "$name" = lancelot -o "$name" = galahad ]; then
- 
 
-ask ${SOL_red}"What is your favorite color?"
+if [ "$name" = "lancelot" -o "$name" = "galahad" ]; then
+  ask ${SOL_red}"What is your favorite color?"
+  colour=$answer
+  echo ${SOL_reset}
 
-colour=$answer
-echo $colour
+elif [ "$name" = "king arthur" ]; then
+  ask ${SOL_green}"What is the airspeed velocity of an unlegged 
+  swallow?"
+
+  if [ "$answer" = "depends on if it's an african or europian swallow" ]; then
+    live
+    echo ${SOL_green}
+
+elif [ "$name" = "sir robin" ]; then
+  echo ${SOL_green}"What is the capitol of acidia?"
+  if [ "$answer" = "I dont know that" ]; then
+    
+    die
+    
+    echo ${SOL_green}
+  
+  echo "${SOL_red}> ${SOL_red}"
+  fi
 fi
-echo ${SOL_reset}
-
-if [ "$name" = king_arthur ]; then
-echo ${SOL_green}"What is the airspeed velocity of an unlegged 
-swallow?"
-echo ${SOL_gree}
-answer=$answer
-echo "WHAT"
 fi
-
