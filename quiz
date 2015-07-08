@@ -6,7 +6,7 @@ clear
 echo ${SOL_green}"Welome to the Quiz game :)"
 
 q1() {
-  ask "What is 9 X 10?" $SOL_yellow
+  ask "What is 9 X 10?" $SOL_blue
   if [ "$answer" = "90" ]; then
     return 0 
   fi
@@ -14,7 +14,7 @@ q1() {
 }
 
 q2() {
-  ask "What is the capitol of the U.S" $SOL_yellow
+  ask "What is the capitol of the U.S" $SOL_red
   if [ "$answer" = "washington d.c." ]; then
     return 0
   fi

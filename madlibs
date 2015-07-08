@@ -1,0 +1,41 @@
+#!/bin/sh
+. utils.sh
+
+clear
+echo ${SOL_magenta}"Welcome to MadLibs :)"${SOL_reset}
+
+
+text=${SOL_green}'
+{random_girl_name} really loves to eat, have you
+noticed how {same_name} has really been trying
+to {verb} alot in order to lose weight but she always
+ends up eating too much {food} her best friend, {famous_dude} made her feel better
+by eating alot of {noun} and getting fat too! one time she broke her bed while
+sleeping and had to pay for it so no more {food} for her so she had a {adjective}
+situation!
+
+
+'
+keys="\
+random_girl_name
+same_name
+verb
+food
+famous_dude
+noun
+food
+adjective"
+
+
+answers=""
+
+for key in  $keys; do
+  ask "Enter: $key"
+  if [ -z "$answers" ]; then
+    answers="$answer"
+  else
+    answers="$answers\n$answer"
+  fi
+done
+
+echo "$answers"
